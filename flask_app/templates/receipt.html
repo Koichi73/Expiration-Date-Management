@@ -1,0 +1,12 @@
+{% extends 'common/layout-inner.html' %}
+{% block content_title %}レシート登録{% endblock %}
+{% block content_inner %}
+    <div class="Container-inner">
+        <form enctype="multipart/form-data" action="/receipt/list" method="POST">
+            <div class="receipt-upload">
+                <input type="file" name="receipt-file" required>
+                <input type="submit" value="登録">
+            </div>
+        </form>
+    </div>
+{% endblock %}

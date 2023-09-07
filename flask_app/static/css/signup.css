@@ -1,0 +1,10 @@
+.Signup {
+  width: 800px;
+  height: 600px;
+  display: flex;
+}
+.Signup .welcome {
+  width: 50%;
+  height: 600px;
+  background-color: blue;
+}/*# sourceMappingURL=signup.css.map */

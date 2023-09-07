@@ -1,0 +1,29 @@
+{% extends 'common/layout.html' %}
+{% block header %}{% endblock %}
+{% block content %}
+    <div class="Signup">
+        <div class="content">
+            <div class="welcome">
+                <p class="welcome-text">期限管理アプリに<br>ようこそ！</p>
+            </div>
+            <div class="signup-form">
+                <p class="signup-form-text">新規登録</p>
+                <form method="POST" action="/auth/signup">
+                    <div class="user-name">
+                        <label for="user-name">ユーザー名</label>
+                        <input type="text", name="user-name", required>
+                    </div>
+                    <div class="password">
+                        <label for="password">パスワード</label>
+                        <input type="password", name="password", required>
+                    </div>
+                    {% if has_error %}
+                        <p class="error-text">このユーザー名は使えません</p>
+                    {% endif %}
+                    <input type="submit", value="登録">
+                </form>
+                <p class="login-text"><a href="/auth/login">ログインはこちら</a></p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,352 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  font-family: sans-serif;
+  font-weight: 400;
+  color: #333333;
+  margin: 0;
+  min-width: 1200px;
+}
+
+p {
+  line-height: 1.5;
+}
+
+a {
+  color: #333333;
+  text-decoration: none;
+}
+
+a:hover {
+  transition: 0.4s;
+  opacity: 0.7;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+picture {
+  display: block;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+input {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  padding: 0;
+}
+
+select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+}
+
+/*-----------------------------------------
+    個人用設定 
+-----------------------------------------*/
+.Wrapper {
+  display: flex;
+}
+
+.Header {
+  width: 300px;
+  height: 100vh;
+  padding-top: 20px;
+}
+.Header .logo-text {
+  font-size: 24px;
+  font-weight: bold;
+  padding-left: 50px;
+  margin-bottom: 60px;
+}
+.Header .nav-item a {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  padding-left: 50px;
+}
+.Header .nav-item a img {
+  width: 20px;
+  margin-right: 20px;
+}
+
+.Container {
+  width: calc(100% - 300px);
+  height: 100vh;
+  overflow-y: scroll;
+  background-color: #F3F3F5;
+  padding-top: 40px;
+}
+
+.Container-Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 80px;
+  margin-bottom: 40px;
+}
+.Container-Header .container-header-text {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.Container-inner {
+  padding: 30px 80px 60px;
+}
+
+.Signup {
+  width: 100%;
+  height: 100vh;
+  background-color: #F3F3F5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Signup .content {
+  width: 800px;
+  height: 550px;
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+}
+.Signup .welcome {
+  width: 50%;
+  background-image: url("../img/auth/welcome.jpg");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Signup .welcome-text {
+  font-size: 30px;
+  font-weight: bold;
+}
+.Signup .signup-form {
+  width: 50%;
+  padding: 70px 60px 0;
+}
+.Signup .signup-form-text {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+.Signup label {
+  display: block;
+  margin-bottom: 5px;
+}
+.Signup input[type=text], .Signup input[type=password] {
+  width: 100%;
+  height: 40px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 1px solid #CACACA;
+  padding: 0 10px;
+}
+.Signup input[type=text] {
+  margin-bottom: 20px;
+}
+.Signup input[type=password] {
+  margin-bottom: 50px;
+}
+.Signup input[type=submit] {
+  width: 100%;
+  height: 50px;
+  font-size: 18px;
+  border-radius: 5px;
+  background-color: #2D66F4;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.Signup .login-text {
+  text-align: center;
+}
+.Signup .error-text {
+  font-size: 13px;
+  color: #ff0000;
+  margin-bottom: 10px;
+}
+
+.Table-Content {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.15);
+}
+.Table-Content table {
+  width: 100%;
+  border-collapse: collapse;
+  border: none;
+  word-wrap: break-word;
+  table-layout: fixed;
+}
+.Table-Content tr {
+  width: 100%;
+  background-color: white;
+  border-bottom: 2px solid #F3F3F5;
+}
+.Table-Content tr.limit {
+  color: #ff0000;
+}
+.Table-Content th {
+  height: 50px;
+}
+.Table-Content th.checkbox {
+  width: 150px;
+}
+.Table-Content th.food-name {
+  text-align: left;
+  padding-left: 60px;
+}
+.Table-Content th.limit-date {
+  width: 35%;
+}
+.Table-Content td {
+  padding: 20px 0;
+}
+.Table-Content td.checkbox {
+  text-align: center;
+}
+.Table-Content td.food-name {
+  padding-left: 60px;
+}
+.Table-Content td.limit-date {
+  text-align: center;
+}
+.Table-Content input[type=text] {
+  border: 1px solid #CACACA;
+  width: 100%;
+  height: 35px;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 0 10px;
+}
+.Table-Content .bottom-table {
+  height: 80px;
+  background-color: #FAFAFA;
+  justify-content: flex-end;
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+}
+.Table-Content .edit-btn, .Table-Content .delete-btn {
+  font-size: 16px;
+  background-color: transparent;
+  cursor: pointer;
+  margin-right: 20px;
+}
+.Table-Content .edit-btn:disabled, .Table-Content .delete-btn:disabled {
+  cursor: default;
+}
+.Table-Content .search-btn, .Table-Content input[type=submit], .Table-Content .receipt-btn {
+  height: 40px;
+  background-color: #2D66F4;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0 20px;
+}
+.Table-Content .search-btn:disabled, .Table-Content input[type=submit]:disabled, .Table-Content .receipt-btn:disabled {
+  opacity: 0.3;
+  background-color: rgb(113, 113, 113);
+  cursor: default;
+}
+.Table-Content .row-btn {
+  margin-right: auto;
+}
+.Table-Content .add-btn, .Table-Content .remove-btn {
+  font-size: 20px;
+  font-weight: bold;
+  background-color: transparent;
+  padding: 0 8px;
+}
+.Table-Content .remove-btn {
+  display: none;
+}
+
+.receipt-upload {
+  width: 100%;
+  height: 80px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.15);
+  padding: 0 40px;
+}
+.receipt-upload input[type=submit] {
+  height: 40px;
+  background-color: #2D66F4;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0 20px;
+}
+
+.text-box {
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.15);
+  padding: 0 40px 60px;
+}
+.text-box h2 {
+  font-size: 20px;
+  border-bottom: 1px solid #CACACA;
+  padding-top: 40px;
+  padding-bottom: 5px;
+  margin-bottom: 25px;
+}
+.text-box p {
+  margin-bottom: 15px;
+}
+.text-box a {
+  color: #2D66F4;
+  text-decoration: underline;
+}
+.text-box .width-80 {
+  width: 80%;
+}
+.text-box .width-30 {
+  width: 30%;
+}
+.text-box .font-14 {
+  font-size: 14px;
+}/*# sourceMappingURL=main.css.map */

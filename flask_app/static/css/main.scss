@@ -1,0 +1,7 @@
+@import "setup"; //最初に読み込む
+@import "common"; //最初に読み込む
+
+@import "auth";
+@import "table";
+@import "receipt";
+@import "how-to-use";

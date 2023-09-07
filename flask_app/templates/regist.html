@@ -1,0 +1,62 @@
+{% extends 'common/layout-inner.html' %}
+{% block content_title %}手動登録{% endblock %}
+{% block content_inner %}
+    <div class="Container-inner">
+        <form action="/regist/exe" method="POST">
+            <div class="Table-Content">
+                <table id="regist-tabel-js">
+                    <tr>
+                        <th class="food-name">食材名</th>
+                        <th class="limit-date">日付</th>
+                    </tr>
+                    <tr>
+                        <td class="food-name"><input type="text" name="food-name[]" required></td>
+                        <td class="limit-date"><input type="date" name="limit-date[]" required></td>
+                    </tr>
+                </table>
+                <div class="bottom-table">
+                    <div class="row-btn">
+                        <button type="button" class="add-btn" onclick="addRow()">＋</button>
+                        <button type="button" class="remove-btn" id="remove-btn-js" onclick="removeRow()">ー</button>
+                    </div>
+                    <input type="submit", value="登録">
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+        //行追加
+        function addRow() {
+            let table = document.getElementById("regist-tabel-js");
+            let newRow = table.insertRow(table.rows.length);
+            let cell0 = newRow.insertCell(0);
+            let cell1 = newRow.insertCell(1);
+
+            cell0.className = "food-name";
+            cell0.innerHTML = '<input type="text" name="food-name[]" required>';
+            cell1.className = "limit-date";
+            cell1.innerHTML = '<input type="date" name="limit-date[]" required>';
+
+            // 行削除ボタンを表示
+            Remove_btn = document.getElementById("remove-btn-js");
+            Remove_btn.style.display = "inline-block";
+        }
+
+        // 行削除
+        function removeRow(button) {
+            let table = document.getElementById("regist-tabel-js");
+            let rowNumber = table.rows.length;
+            table.deleteRow(rowNumber - 1);
+
+            // 行が1つになったら行削除ボタンを非表示
+            if (rowNumber == 3) {
+                Remove_btn = document.getElementById("remove-btn-js");
+                Remove_btn.style.display = "none";
+            }
+        }
+    </script>
+{% endblock %}
+
+<script>
+    
+</script>

@@ -1,0 +1,62 @@
+{% extends 'common/layout-inner.html' %}
+{% block content_title %}レシート登録{% endblock %}
+{% block content_inner %}
+    <div class="Container-inner">
+        <form action="/receipt/exe" method="POST" id="receipt-form-js">
+            <div class="Table-Content">
+                <table>
+                    <tr>
+                        <th class="checkbox">選択</th>
+                        <th class="food-name">食材名</th>
+                        <th class="limit-date">日付</th>
+                    </tr>
+                    {% for x in text_list_removed %}
+                        <tr>
+                            <td class="checkbox"><input type="checkbox" name="checkbox" value="{{ loop.index }}" onchange="toggleCheckbox(this)"></td>
+                            <td class="food-name"><input type="text" name="food-name-{{ loop.index }}" value="{{ x }}"></td>
+                            <td class="limit-date"><input type="date" name="limit-date-{{ loop.index }}"></td>
+                        </tr>
+                    {% endfor %}
+                </table>
+                <div class="bottom-table">
+                    <button type="submit" class="receipt-btn" disabled>登録</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+        // チェックボックスtrueで送信ボタンを有効化
+        function updateSubmitButton() {
+            let form = document.getElementById("receipt-form-js");
+            let checkboxes = form.querySelectorAll("input[type='checkbox']");
+            let submitButtons = form.querySelectorAll("button[type='submit']");
+
+            // trueのチェックボックスの数をカウント
+            let checkedCount = 0;
+            for (let i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked) {
+                    checkedCount++;
+                }
+            }
+
+            // 送信ボタンの有効化・無効化
+            if (checkedCount > 0) {
+                for (let i = 0; i < submitButtons.length; i++) submitButtons[i].disabled = false;
+            } else {
+                for (let i = 0; i < submitButtons.length; i++) submitButtons[i].disabled = true;
+            }
+        }
+        
+        function toggleCheckbox(checkbox) {
+            updateSubmitButton() // 送信ボタンの有効化・無効化
+
+            // チェックボックスtrueの行のinputにrequiredをつける
+            const row = checkbox.closest('tr');
+            const inputs = row.querySelectorAll('input[type="text"], input[type="date"]');
+            
+            for (const input of inputs) {
+                input.required = checkbox.checked;
+            }
+        }
+    </script>
+{% endblock %}

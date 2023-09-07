@@ -1,0 +1,51 @@
+{% extends 'common/layout.html' %}
+{% block content %}
+    <div class="Wrapper">
+        <!-- Header -->
+        <header class="Header">
+            <p class="logo-text">期限管理アプリ</p>
+            <nav>
+                <ul class="nav-items">
+                    <li class="nav-item">
+                        <a href="/food-list">
+                            <img src="../../static/img/header/food-list.svg">
+                            <span>食材リスト</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/regist">
+                            <img src="../../static/img/header/pen.svg">
+                            <span>手動登録</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/receipt">
+                            <img src="../../static/img/header/receipt.svg">
+                            <span>レシート登録</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/how-to-use">
+                            <img src="../../static/img/header/question.svg">
+                            <span>使い方</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!-- Container -->
+        <div class="Container">
+            <div class="Container-Header">
+                <h1 class="container-header-text">{% block content_title %}{% endblock %}</h1>
+                {% if session.logged_in %}
+                    <p class="logout"><a href="/auth/logout">ログアウト</a></p>
+                {% else %}
+                    <p class="login"><a href="/auth/login">ログイン</a></p>
+                {% endif %}
+                
+            </div>
+            {% block content_inner %}
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}

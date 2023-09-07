@@ -1,0 +1,23 @@
+{% extends 'common/layout-inner.html' %}
+{% block content_title %}使い方{% endblock %}
+{% block content_inner %}
+    <div class="Container-inner">
+        <div class="text-box">
+            <h2>1. サインアップ, ログイン</h2>
+            <p><a href="">新規登録画面</a>からサインアップ、そしてログインをしましょう。<br>テスト用に、以下のログイン情報を用意しています。</p>
+            <p>ユーザー名：test<br>パスワード：test</p>
+
+            <h2>2. 食品リスト</h2>
+            <p>ログインが済んだら、食品リスト画面に移動します。<br>初期状態では、何もありません。以下に、食品リストの例を示します。</p>
+            <p><img src="../static/img/how-to-use/food-list.png" class="width-80"></p>
+            <p>このように、期限が本日以前の食品は赤文字で示されます。</p>
+            <p>また、「レシピを検索」では、チェックした食品のレシピを検索することができます。</p>
+
+            <h2>3. レシート登録</h2>
+            <p>購入した食品を、レシートから登録することができます。テスト用に、以下のレシートを用意しています。</p>
+            <p><img src="../static/img/how-to-use/example-receipt.jpeg" class="width-30"></p>
+            <p><a href="https://getnews.jp/archives/2935736/gate" class="font-14">引用元</a></p>
+            <p>レシートの読み取りでは、食品以外のテキストも含まれてしまいます(修正予定)。<br>購入した食材にチェックを入れて、期限を設定しましょう。</p>
+        </div>
+    </div>
+{% endblock %}

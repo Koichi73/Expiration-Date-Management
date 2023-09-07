@@ -1,0 +1,53 @@
+.Wrapper {
+    display: flex;
+}
+
+.Header {
+    width: 300px;
+    height: 100vh;
+    padding-top: 20px;
+    
+    .logo-text {
+        font-size: 24px;
+        font-weight: bold;
+        padding-left: 50px;
+        margin-bottom: 60px;
+    }
+
+    .nav-item a {
+        display: flex;
+        align-items: center;
+        height: 80px;
+        padding-left: 50px;
+
+        img {
+            width: 20px;
+            margin-right: 20px;
+        }
+    }
+}
+
+.Container {
+    width: calc(100% - 300px);
+    height: 100vh;
+    overflow-y: scroll;
+    background-color: $bk;
+    padding-top: 40px;
+}
+
+.Container-Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 $padding;
+    margin-bottom: 40px;
+
+    .container-header-text {
+        font-size: 20px;
+        font-weight: 400;
+    }
+}
+
+.Container-inner {
+    padding: 30px $padding 60px;
+}

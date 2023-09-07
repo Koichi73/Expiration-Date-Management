@@ -1,0 +1,74 @@
+{% extends 'common/layout-inner.html' %}
+{% block content_title %}食材リスト{% endblock %}
+{% block content_inner %}
+    <div class="Container-inner">
+        <form id="food-list-form-js" action="" target="" method="POST">
+            <div class="Table-Content">
+                <table>
+                    <tr>
+                        <th class="checkbox">選択</th>
+                        <th class="food-name">食材名</th>
+                        <th class="limit-date">期限</th>
+                    </tr>
+                    {% for id, food_name, limit_date, has_limit in food_list %}
+                        <tr {% if has_limit %}class="limit"{% endif %}>
+                            <td class="checkbox"><input type="checkbox" name="checkbox" value="{{ id }}" onchange="toggleCheckbox(this)"></td>
+                            <td class="food-name">{{ food_name }}</td>
+                            <td class="limit-date">{{ limit_date }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+                <div class="bottom-table">
+                    <button type="submit" onclick="setAction('edit')" class="edit-btn" disabled>編集</button>
+                    <button type="submit" onclick="setAction('delete')" class="delete-btn" disabled>削除</button>
+                    <button type="submit" onclick="setAction('search')" class="search-btn" disabled>レシピを検索</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+        // actionの分岐
+        function setAction(actionType) {
+            let form = document.getElementById('food-list-form-js');
+            if (actionType === "edit") {
+                form.action = "/edit";
+            } else if (actionType === "delete") {
+                let confirmation = confirm("削除しますか？");
+                if (!confirmation) {
+                    return false;
+                }
+                form.action = "/delete";
+            } else if (actionType === "search") {
+                form.target = "_blank";
+                form.action = "/search";
+            }
+            form.submit();
+        }
+
+        // チェックボックスtrueで送信ボタンを有効化
+        function updateSubmitButton() {
+            let form = document.getElementById("food-list-form-js");
+            let checkboxes = form.querySelectorAll("input[type='checkbox']");
+            let submitButtons = form.querySelectorAll("button[type='submit']");
+
+            // trueのチェックボックスの数をカウント
+            let checkedCount = 0;
+            for (let i = 0; i < checkboxes.length; i++) {
+                if (checkboxes[i].checked) {
+                    checkedCount++;
+                }
+            }
+
+            // 送信ボタンの有効化・無効化
+            if (checkedCount > 0) {
+                for (let i = 0; i < submitButtons.length; i++) submitButtons[i].disabled = false;
+            } else {
+                for (let i = 0; i < submitButtons.length; i++) submitButtons[i].disabled = true;
+            }
+        }
+
+        function toggleCheckbox() {
+            updateSubmitButton()
+        }
+    </script>
+{% endblock %}

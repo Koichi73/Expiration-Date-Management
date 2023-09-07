@@ -1,0 +1,28 @@
+{% extends 'common/layout.html' %}
+{% block content %}
+    <div class="Signup">
+        <div class="content">
+            <div class="welcome">
+                <p class="welcome-text">期限管理アプリに<br>ようこそ！</p>
+            </div>
+            <div class="signup-form">
+                <p class="signup-form-text">ログイン</p>
+                <form method="POST" action="/auth/login">
+                    <div class="user-name">
+                        <label for="user-name">ユーザー名</label>
+                        <input type="text", name="user-name", required>
+                    </div>
+                    <div class="password">
+                        <label for="password">パスワード</label>
+                        <input type="password", name="password", required>
+                    </div>
+                    {% if has_error %}
+                        <p class="error-text">ユーザー名かパスワードが間違っています</p>
+                    {% endif %}
+                    <input type="submit", value="ログイン">
+                </form>
+                <p class="login-text"><a href="/auth/signup">新規登録はこちら</a></p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
