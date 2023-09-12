@@ -8,7 +8,7 @@ import re
 from dotenv import load_dotenv
 
 receipt_bp = Blueprint('receipt', __name__, url_prefix='/receipt')
-load_dotenv(override=True) # 環境変数の読み込み
+load_dotenv() # 環境変数の読み込み
 
 
 # レシート登録画面
@@ -26,7 +26,7 @@ def receipt_list():
         file = request.files['receipt-file']
 
         #JSONファイルの指定
-        os.environ.get("GOOGLE_APPLICATION_CREDENTIALS")
+        os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
         
         #APIの実行
         client = vision.ImageAnnotatorClient()

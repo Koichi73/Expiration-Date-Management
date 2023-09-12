@@ -30,6 +30,7 @@
         // actionの分岐
         function setAction(actionType) {
             let form = document.getElementById('food-list-form-js');
+            form.target = ""; // 初期化
             if (actionType === "edit") {
                 form.action = "/edit";
             } else if (actionType === "delete") {
