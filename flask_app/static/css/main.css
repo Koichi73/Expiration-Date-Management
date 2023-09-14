@@ -155,10 +155,11 @@ select {
 .Signup .welcome-text {
   font-size: 30px;
   font-weight: bold;
+  text-align: center;
 }
 .Signup .signup-form {
   width: 50%;
-  padding: 70px 60px 0;
+  padding: 60px 60px 0;
 }
 .Signup .signup-form-text {
   font-size: 25px;
@@ -191,15 +192,19 @@ select {
   background-color: #2D66F4;
   color: white;
   cursor: pointer;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 .Signup .login-text {
   text-align: center;
+  margin-bottom: 3px;
 }
 .Signup .error-text {
   font-size: 13px;
   color: #ff0000;
   margin-bottom: 10px;
+}
+.Signup .how-to-use-text {
+  text-align: center;
 }
 
 .Table-Content {

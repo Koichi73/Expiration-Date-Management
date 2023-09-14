@@ -25,11 +25,12 @@
     .welcome-text {
         font-size: 30px;
         font-weight: bold;
+        text-align: center;
     }
 
     .signup-form {
         width: 50%;
-        padding: 70px 60px 0;
+        padding: 60px 60px 0;
     }
 
     .signup-form-text {
@@ -68,17 +69,22 @@
         background-color: $blue;
         color: white;
         cursor: pointer;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
     }
 
     .login-text {
         text-align: center;
+        margin-bottom: 3px;
     }
 
     .error-text {
         font-size: 13px;
         color: $red;
         margin-bottom: 10px;
+    }
+
+    .how-to-use-text {
+        text-align: center;
     }
 }
 
