@@ -11,3 +11,6 @@
 - レシート読み取り(OCR)
 - 賞味(消費)期限の手動登録、編集、削除
 - レシピ検索
+
+## Link
+https://qiita.com/Koichi37/items/f812a393f7255e8e6ff2
