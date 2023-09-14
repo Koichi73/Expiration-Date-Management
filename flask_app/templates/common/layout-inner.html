@@ -38,9 +38,9 @@
             <div class="Container-Header">
                 <h1 class="container-header-text">{% block content_title %}{% endblock %}</h1>
                 {% if session.logged_in %}
-                    <p class="logout"><a href="/auth/logout">ログアウト</a></p>
+                    <p class="logout"><a href="/logout">ログアウト</a></p>
                 {% else %}
-                    <p class="login"><a href="/auth/login">ログイン</a></p>
+                    <p class="login"><a href="/login">ログイン</a></p>
                 {% endif %}
                 
             </div>

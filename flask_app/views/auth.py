@@ -5,7 +5,7 @@ from flask_app.models import User
 from flask_login import login_user, logout_user, login_required, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
 
-auth_bp = Blueprint('auth', __name__, url_prefix='/auth')
+auth_bp = Blueprint('auth', __name__, url_prefix='/')
 
 
 @login_manager.user_loader
@@ -28,7 +28,7 @@ def signup():
             signup_user = User(user_name=user_name, password=generate_password_hash(password))
             db.session.add(signup_user)
             db.session.commit()
-            return redirect("/auth/login")
+            return redirect("/login")
     else:
         return render_template("signup.html")
     
@@ -56,4 +56,4 @@ def login():
 def logout():
     logout_user()
     session.pop('logged_in', None)
-    return redirect("/auth/login")
+    return redirect("/login")
