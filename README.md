@@ -3,7 +3,7 @@
 
 ![image](https://github.com/Koichi73/Expiration-Date-Management/assets/73371496/497eb915-b2a0-446d-aeaf-5add5fde78ab)
 
-## How To Use
+## Usage
 <a href="https://koichi73.pythonanywhere.com/how-to-use/">https://koichi73.pythonanywhere.com/how-to-use/</a>
 
 ## Features
